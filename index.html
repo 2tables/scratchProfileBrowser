@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Scratch Profile Browser
+        </title>
+        <link rel="icon" type="image/svg" href="icon.svg">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="enter">
+            <input id="UsernameInput" placeholder="ScratchCat">
+            <button onClick="getScratchUser(input.value);">Look</button>
+        </div>
+        <div id="error" class="error"></div>
+        <div class="loading">
+        </div>
+        <div class="userdisp" id="UserDisplay">
+            Search for a user using the input at the top.
+        </div>
+        <div class="allinfo" id="allInfo">
+            <div id="ocular" class="my-ocular"></div>
+            <div id="joined" class="joined"></div>
+            <h1>
+                User Info
+            </h1>
+            <div id="school"></div>
+            <div class="follow">
+                <div class="side"><span id="followers">...</span>followers</div>
+                <div class="side"><span id="following">...</span>following</div>
+            </div>
+            <div class="project-info" id="projectInfo">
+                <div id="recentProject"></div>
+                <div class="project-stats">
+                    <div id="recentFavorites">... favorties</div>
+                    -
+                    <div id="recentLoves">... loves</div>
+                    -
+                    <div id="recentViews">... views</div>
+                </div>
+                <div id="favoritedProject"></div>
+                <div class="project-stats">
+                    <div id="favoritedFavorites">... favorties</div>
+                    -
+                    <div id="favoritedLoves">... loves</div>
+                    -
+                    <div id="favoritedViews">... views</div>
+                </div>
+                <div id="lovedProject"></div>
+                <div class="project-stats">
+                    <div id="lovedFavorites">... favorties</div>
+                    -
+                    <div id="lovedLoves">... loves</div>
+                    -
+                    <div id="lovedViews">... views</div>
+                </div>
+                <div id="viewedProject"></div>
+                <div class="project-stats">
+                    <div id="viewedFavorites">... favorties</div>
+                    -
+                    <div id="viewedLoves">... loves</div>
+                    -
+                    <div id="viewedViews">... views</div>
+                </div>
+            </div>
+            <div class="descriptions">
+                <div class="descpart">
+                    <div id="aboutwho">About me</div>
+                    <div id="scratchBio" class="scratchdesc"></div>
+                </div>
+                <div class="descpart">
+                    <div id="status">What I'm working on</div>
+                    <div id="scratchStatus" class="scratchdesc"></div>
+                </div>
+            </div>
+            <h1>
+                Forum Info
+            </h1>
+            <div class="count" id="counts"></div>
+            Signature
+            <div class="siggy" id="signature"></div>
+        </div>
+        <script src="lookup.js"></script>
+        <script src="mode.js"></script>
+        <script src="cookies.js"></script> 
+    </body>
+</html>
