@@ -12,7 +12,7 @@ files are listed within the "Important Files" section. Additionally, if any
 required steps for compilation are required, they will be included within this
 section.
 
-As of right now, you can only access this site through [the Github Pages webpage](2tables.github.io/ScratchProfileBrowser) or by downloading the ZIP and opening index.html.
+As of right now, you can only access this site through [the Github Pages webpage](https://2tables.github.io/ScratchProfileBrowser) or by downloading the ZIP and opening index.html.
 
 ### Important Files
 - index.html: This is the main webpage of ScratchBrowser.com
