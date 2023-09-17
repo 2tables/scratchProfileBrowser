@@ -16,7 +16,7 @@ As of right now, you can only access this site through [the Github Pages webpage
 
 ### Important Files
 - index.html: This is the main webpage of ScratchBrowser.com
-    - lookup.js: Looks up all the information about Scratch users.
+    - main.js: Looks up all the information about Scratch users.
 - main.htaccess: Redirects to not_found.html
     - not_found.html: For all pages that don't exist.
 - cookies.js: Simple JavaScript file for logging visits to site.

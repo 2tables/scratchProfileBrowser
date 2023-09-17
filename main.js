@@ -139,7 +139,7 @@ function getScratchUser(username){
             }
         if(data.projects.length > 0){
             let latestProject = data.projects[data.projects.length - 1];
-            getElementById("recentProject").innerHTML = "<img src=\"icons/recent.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + latestProject.info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + latestProject.info.title + "</a>";
+            getElementById("recentProject").innerHTML = "<img src=\"assets/icons/recent.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + latestProject.info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + latestProject.info.title + "</a>";
             getElementById("recentFavorites").innerHTML = latestProject.favorites + " favorites";
             getElementById("recentLoves").innerHTML = latestProject.loves + " loves";
             getElementById("recentViews").innerHTML = latestProject.views + " views";
@@ -151,7 +151,7 @@ function getScratchUser(username){
                 }
                 project_i = project_i + 1;
             }
-            getElementById("lovedProject").innerHTML = "<img src=\"icons/loves.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + data.projects[lovedProjectIndex].info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + data.projects[lovedProjectIndex].info.title + "</a>";
+            getElementById("lovedProject").innerHTML = "<img src=\"assets/icons/loves.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + data.projects[lovedProjectIndex].info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + data.projects[lovedProjectIndex].info.title + "</a>";
             getElementById("lovedFavorites").innerHTML = data.projects[lovedProjectIndex].favorites + " favorites";
             getElementById("lovedLoves").innerHTML = "<b>" + data.projects[lovedProjectIndex].loves + " loves</b>";
             getElementById("lovedViews").innerHTML = data.projects[lovedProjectIndex].views + " views";
@@ -163,7 +163,7 @@ function getScratchUser(username){
                 }
                 project_i = project_i + 1;
             }
-            getElementById("favoritedProject").innerHTML = "<img src=\"icons/favorites.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + data.projects[favoritedProjectIndex].info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + data.projects[favoritedProjectIndex].info.title + "</a>";
+            getElementById("favoritedProject").innerHTML = "<img src=\"assets/icons/favorites.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + data.projects[favoritedProjectIndex].info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + data.projects[favoritedProjectIndex].info.title + "</a>";
             getElementById("favoritedFavorites").innerHTML = "<b>" + data.projects[favoritedProjectIndex].favorites + " favorites</b>";
             getElementById("favoritedLoves").innerHTML = data.projects[favoritedProjectIndex].loves + " loves";
             getElementById("favoritedViews").innerHTML = data.projects[favoritedProjectIndex].views + " views";
@@ -175,7 +175,7 @@ function getScratchUser(username){
                 }
                 project_i = project_i + 1;
             }
-            getElementById("viewedProject").innerHTML = "<img src=\"icons/views.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + data.projects[viewedProjectIndex].info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + data.projects[viewedProjectIndex].info.title + "</a>";
+            getElementById("viewedProject").innerHTML = "<img src=\"assets/icons/views.svg\" class=\"icon\"><a href=\"https://scratch.mit.edu/projects/" + data.projects[viewedProjectIndex].info.scratch_id + "\" title=\"Original project page link\"target=\"_blank\">" + data.projects[viewedProjectIndex].info.title + "</a>";
             getElementById("viewedFavorites").innerHTML = data.projects[viewedProjectIndex].favorites + " favorites";
             getElementById("viewedLoves").innerHTML = data.projects[viewedProjectIndex].loves + " loves";
             getElementById("viewedViews").innerHTML = "<b>" + data.projects[viewedProjectIndex].views + " views</b>";
@@ -185,7 +185,7 @@ function getScratchUser(username){
     });
     fetch("https://my-ocular.jeffalo.net/api/user/" + username)
         .catch((error) => {
-            getElementById('error').innerText = 'ScratchDB is currently down.';
+            getElementById('error').innerText = getElementById('error').innerText + '\nocular is currently down.';
             return;
         })
         .then(res => res.json()).then(data => {
