@@ -43,7 +43,7 @@ function getScratchUser(username){
         window.location.href = window.location.href.split('?')[0] + "?" + urlParams.toString();
     } else if (username_parameter === ""){
         if(input.value === ""){
-            userDisplay.innerHTML = lines[Math.floor(Math.random() * lines.length)] + "<br><div class=\"joined\">Search for a user, or type \"?u=\" and the username at the end of the URL</div>";
+            userDisplay.innerHTML = lines[Math.floor(Math.random() * lines.length)] + "<br><div class=\"joined\">Search for a user using the input at the top.</div>";
             return;
         } else {
             urlParams.delete("u");
