@@ -8,12 +8,16 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="enter">
-            <input id="UsernameInput" placeholder="ScratchCat">
-            <button onClick="getScratchUser(input.value);">Look</button>
+        <div class="header">
+            <a href="pages/leaderboard.html">Leaderboard</a>
+            <div class="enter">
+                <input id="UsernameInput" placeholder="ScratchCat">
+                <button onClick="getScratchUser(input.value);">Look</button>
+            </div>
         </div>
+        <div id="loading"></div>
+        <div class="main" id="main">
         <div id="error" class="error"></div>
-        <div class="loading">
         </div>
         <div class="userdisp" id="UserDisplay">
             Search for a user using the input at the top.
@@ -79,7 +83,7 @@
             <div class="count" id="counts"></div>
             Signature
             <div class="siggy" id="signature"></div>
-        </div>
+            </div>
         <script src="main.js"></script>
         <script src="mode.js"></script>
         <script src="cookies.js"></script> 

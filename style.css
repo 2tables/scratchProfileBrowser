@@ -1,3 +1,6 @@
+.main{
+    margin: 10px;
+}
 .error{
     color: red;
 }
@@ -6,6 +9,8 @@
 }
 body{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
 }
 .error{
     visibility: hidden;
@@ -44,12 +49,16 @@ a:hover{
     font-size: 50px;
     font-weight: bold;
 }
-.enter{
+.header{
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    background: linear-gradient(white 50%, rgba(0,0,0,0));
-    width: 100vh;
+    background: white;
+    padding: 0 10px;
+    width: 100vw;
     top: 0px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .side{
     display: grid;
@@ -89,6 +98,39 @@ input{
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
+}
+#users{
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.user{
+    display: flex;
+    height: 75px;
+    background: white;
+    color: black;
+    padding: 10px;
+    align-items: center;
+    gap: 5px;
+    font-size: 50px;
+    border: 1px solid black;
+    justify-content: space-between;
+}
+.user > span{
+    display: flex;
+    height: 75px;
+    background: white;
+    color: black;
+    padding: 10px;
+    align-items: center;
+    gap: 5px;
+    font-size: 50px;
+}
+.user > span > img{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 75px;
+    width: 75px;
 }
 .scratchdesc{
     width: 297px;
