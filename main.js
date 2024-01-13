@@ -203,6 +203,6 @@ if(username_parameter !== null){
     if(username_parameter !== ""){
         getScratchUser(username_parameter);
     } else {
-        userDisplay.innerHTML = lines[Math.floor(Math.random() * lines.length)] + "<br><div class=\"joined\">Search for a user, or type \"?u=\" and the username at the end of the URL</div>";
+        userDisplay.innerHTML = lines[Math.floor(Math.random() * lines.length)] + "<br><div class=\"joined\">Search for a user using the input at the top.</div>";
     }
 }
