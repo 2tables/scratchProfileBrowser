@@ -86,8 +86,8 @@ async function getScratchUser(username) {
         if (data.statistics.following === null) {
             data.statistics.following = 0;
         }
-        document.getElementById("followers").innerHTML = data.statistics.followers;
-        document.getElementById("following").innerHTML = data.statistics.following;
+        document.getElementById("followers").innerHTML = data.statistics.followers.toLocaleString('en-US');
+        document.getElementById("following").innerHTML = data.statistics.following.toLocaleString('en-US');
     }
     badge = "";
     if (data.school !== null) {
@@ -103,8 +103,8 @@ async function getScratchUser(username) {
     userDisplay.innerHTML = "<img class=\"profile-picture\" src='https://cdn2.scratch.mit.edu/get_image/user/" + data.id + "_90x90.png'><br><h1><a class=\"username\" href='https://scratch.mit.edu/users/" + data.username + "' target='_blank'>" + data.username + badge + "</a></h1> #" + data.id;
     joined = data.joined.split("T")[0].split("-");
     document.getElementById("joined").innerHTML = data.status + "<br>Joined " + months[Number(joined[1]) - 1] + " " + Number(joined[2]) + ", " + Number(joined[0]);
-    scratchBio.innerHTML = data.bio;
-    scratchStatus.innerHTML = data.work;
+    scratchBio.innerHTML = data.bio.replaceAll("<a href=\"/users/", "<a href=\"https://2tables.github.io/scratchProfileBrowser?u=");
+    scratchStatus.innerHTML = data.work.replaceAll("<a href=\"/users/", "<a href=\"https://2tables.github.io/scratchProfileBrowser?u=");
     document.getElementById("loading").innerText = "Getting info from https://scratchdb.lefty.one/v3/forum/user/info/" + username;
     res = await fetch("https://scratchdb.lefty.one/v3/forum/user/info/" + username)
     data = await res.json()
