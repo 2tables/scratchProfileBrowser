@@ -1,6 +1,16 @@
 .main{
     margin: 10px;
 }
+.selection > button{
+    height: 100px;
+    width: 25vw;
+}
+.selection > button:hover{
+    background: #b8b8b8;
+}
+.selection{
+    display: flex;
+}
 .error{
     color: red;
 }
