@@ -1,3 +1,4 @@
+keyword = "followers";
 users = [];
 
 function clear(){
@@ -21,12 +22,22 @@ async function getPage(page, type){
 
 function changeType(type){
     clear();
+    document.getElementById(keyword).classList.remove("active")
     keyword = type;
+    document.getElementById(keyword).classList.add("active")
     getPage(index, keyword);
+    if(keyword == "followers"){
+        document.getElementById("users").style.borderRadius = "0 10px 10px 10px";
+    } else if (keyword == "views"){
+        document.getElementById("users").style.borderRadius = "10px 0 10px 10px";
+    } else {
+        document.getElementById("users").style.borderRadius = "10px";
+    }
 }
 
 index = 0;
-keyword = "followers";
+document.getElementById(keyword).classList.add("active")
+changeType("followers")
 getPage(index, keyword);
 
 window.onscroll = function(){
