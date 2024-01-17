@@ -3,6 +3,7 @@
 }
 .selection > button{
     height: 100px;
+    margin: 0;
     width: 25vw;
 }
 .selection > button:hover{
@@ -10,6 +11,10 @@
 }
 .selection{
     display: flex;
+}
+.active{
+    border-bottom: none;
+    border-radius: 10px 10px 0 0
 }
 .error{
     color: red;
@@ -111,6 +116,7 @@ input{
 }
 #users{
     border: 1px solid black;
+    border-top: none;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -125,6 +131,10 @@ input{
     font-size: 50px;
     border: 1px solid black;
     justify-content: space-between;
+}
+.user:nth-child(1){
+    border: none;
+    border-bottom: 1px solid black;
 }
 .user > span{
     display: flex;
