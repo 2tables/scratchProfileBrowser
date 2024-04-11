@@ -88,6 +88,9 @@ async function getScratchUser(username) {
         }
         document.getElementById("followers").innerHTML = data.statistics.followers.toLocaleString('en-US');
         document.getElementById("following").innerHTML = data.statistics.following.toLocaleString('en-US');
+    } else {
+        document.getElementById("followers").innerHTML = "(._.)";
+        document.getElementById("following").innerHTML = "&nbsp;";
     }
     badge = "";
     if (data.school !== null) {
@@ -111,21 +114,21 @@ async function getScratchUser(username) {
     if (urlParams.get("dev") == "true") {
         console.log(data);
     }
-    if (data.error !== undefined) {
-        return null;
-    }
-    if (data.signature === null) {
-        document.getElementById("signature").innerHTML = "No signature";
+    if (data.error === undefined) {
+        if (data.signature === null) {
+            document.getElementById("signature").innerHTML = "No signature";
+        } else {
+            document.getElementById("signature").innerHTML = data.signature.replace(/src="/g, "src=\"https://").replace(/https:\/\/https/g, "https");
+        }
+        subcounts = '';
+        for (i = 1; i < Object.keys(data.counts).length; i++) {
+            subcounts = subcounts + "<div class='sub-count'>" + "Posts in " + Object.keys(data.counts)[i] + ": " + data.counts[Object.keys(data.counts)[i]].count + "</div>";
+        }
+        document.getElementById("counts").innerHTML = "Total Posts: " + data.counts.total.count + subcounts;
     } else {
-        document.getElementById("signature").innerHTML = data.signature.replace(/src="/g, "src=\"https://").replace(/https:\/\/https/g, "https");
+        document.getElementById("signature").innerHTML = "Hi. This is a message from ZNomad, the developer. If you're seeing this, it means that the website cannot currently get data from ScratchDB. I may be aware of this, but feel free to let me know, or even make a pull request on <a href=\"https://www.github.com/2tables/scratchProfileBrowser\">GitHub</a>."
+        document.getElementById("counts").innerHTML = "Total Posts: eh";
     }
-    let i = 1;
-    subcounts = '';
-    while (i < Object.keys(data.counts).length) {
-        subcounts = subcounts + "<div class='sub-count'>" + "Posts in " + Object.keys(data.counts)[i] + ": " + data.counts[Object.keys(data.counts)[i]].count + "</div>";
-        i = i + 1;
-    }
-    document.getElementById("counts").innerHTML = "Total Posts: " + data.counts.total.count + subcounts;
     document.getElementById("loading").innerText = "Getting info from https://scratchdb.lefty.one/v2/project/info/user/" + username;
     res = await fetch("https://scratchdb.lefty.one/v2/project/info/user/" + username)
     data = await res.json();
