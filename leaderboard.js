@@ -7,13 +7,13 @@ function clear(){
 
 async function getPage(page, type){
     for(i = 0; i < 100; i++){
-        users[i] = await document.createElement("span")
+        users[i] = await document.createElement("span");
         users[i].className = await "user";
         users[i].innerHTML = await `<span><img src="../assets/not_found.png">#${(i + 1) + (page * 100)} - user</span>0`;
         document.getElementById("users").appendChild(users[i]);
     }
     res = await fetch(`https://scratchdb.lefty.one/v3/user/rank/global/${type}/${page}`);
-    data = await res.json()
+    data = await res.json();
     console.log(data);
     for(i = 0; i < data.length; i++){
         users[i].innerHTML = await `<span><img src="https://cdn2.scratch.mit.edu/get_image/user/${data[i].id}_90x90.png">#${(i + 1) + (page * 100)} - ${data[i].username}</span>${data[i].statistics[type].toLocaleString('en-US')}`;
@@ -22,9 +22,10 @@ async function getPage(page, type){
 
 function changeType(type){
     clear();
-    document.getElementById(keyword).classList.remove("active")
+    document.getElementById(keyword).classList.remove("active");
     keyword = type;
-    document.getElementById(keyword).classList.add("active")
+    document.getElementById(keyword).classList.add("active");
+    index = 0;
     getPage(index, keyword);
     if(keyword == "followers"){
         document.getElementById("users").style.borderRadius = "0 10px 10px 10px";
@@ -36,8 +37,8 @@ function changeType(type){
 }
 
 index = 0;
-document.getElementById(keyword).classList.add("active")
-changeType("followers")
+document.getElementById(keyword).classList.add("active");
+changeType("followers");
 getPage(index, keyword);
 
 window.onscroll = function(){
@@ -45,5 +46,5 @@ window.onscroll = function(){
         console.log("updating");
         index++;
         getPage(index, keyword);
-    }
+    };
 };
